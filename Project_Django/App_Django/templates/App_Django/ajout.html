@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1> Saisie d'un nouveau jeu </h1>
-      <form method="post" action="/App_Django/traitement/{{id}}/">
+      <form method="post" action="/App_Django/updatetraitement/{{id}}/">
         {% csrf_token %}
       {{form.as_ul}}
         <input type="submit" value="envoyer les données"/>
