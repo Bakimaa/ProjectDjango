@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import views
+from . import views, Studiodev_views
 
 urlpatterns = [
     path('ajout/', views.ajout),
@@ -11,11 +11,11 @@ urlpatterns = [
     path('updatetraitement/<int:id>/', views.updatetraitement),
     path('delete/<int:id>/', views.delete),
 #pages pour les Studios de développement de jeu vidéo
-    path('ajoutstudiodev/', Studiodev_views.ajout),
-    path('affichestudiodev/<int:id>/', Studiodev_views.affiche),
-    path('traitementstudiodev/', Studiodev_views.traitement),
-    path('indexstudiodev/', Studiodev_views.index),
-    path('updatestudiodev/<int:id>/', Studiodev_views.update),
-    path('updatetraitementstudiodev/<int:id>/', Studiodev_views.updatetraitement),
-    path('deletestudiodev/<int:id>/', Studiodev_views.delete),
+    path('ajoutstudiodev/', Studiodev_views.ajoutstudiodev),
+    path('affichestudiodev/<int:id>/', Studiodev_views.affichestudiodev),
+    path('traitementstudiodev/', Studiodev_views.traitementstudiodev),
+    path('indexstudiodev/', Studiodev_views.indexstudiodev),
+    path('updatestudiodev/<int:id>/', Studiodev_views.updatestudiodev),
+    path('updatetraitementstudiodev/<int:id>/', Studiodev_views.updatetraitementstudiodev),
+    path('deletestudiodev/<int:id>/', Studiodev_views.deletestudiodev),
 ]

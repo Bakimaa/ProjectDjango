@@ -16,7 +16,7 @@ class Jeux(models.Model):
                 return {"nom":self.nom, "pateforme":self.plateforme, "date_parution":self.date_parution, "prix":self.prix, "genre":self.genre, "resume":self.resume}
 
 class Studiodev(models.Model):
-        nom = models.Charfield(max_length=100, blank=False)
+        nom = models.CharField(max_length=100, blank=False)
         franchise = models.TextField(null = True, blank = True)
 
         def __str__(self):

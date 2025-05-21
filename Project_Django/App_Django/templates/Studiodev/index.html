@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Bienvenue sur la Base de donnée des studios de développement de jeux vidéos </h1>
+<a href="/App_Django/ajoutstudiodev/"> ajouter un studio </a>
+<ol>
+    {% for l in liste %}
+        <li> {{l}} <a href="/App_Django/affichestudiodev/{{l.id}}/"> en savoir plus </a> <a href="/App_Django/updatestudiodev/{{l.id}}/"> update </a> <a href="/App_Django/deletestudiodev/{{l.id}}/"> supprimer </a> </li>
+    {% endfor %}
+</ol>
+</body>
+</html>

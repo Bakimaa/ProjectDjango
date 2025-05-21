@@ -9,25 +9,25 @@ def traitementstudiodev(request):
             form.save()
             return HttpResponseRedirect("/App_Django/")
         else:
-            return render(request,"App_Django/ajout.html",{"form": form})
+            return render(request,"Studiodev/ajout.html",{"form": form})
 
 def ajoutstudiodev(request):
     form_vide = StudiodevForm()
-    return render(request, "App_Django/ajout.html", {"form": form_vide})
+    return render(request, "Studiodev/ajout.html", {"form": form_vide})
 
 def affichestudiodev(request, id):
     Studiodev = models.Studiodev.objects.get(pk=id)
-    return render(request,"App_Django/affiche.html", {"Studiodev": Studiodev})
+    return render(request,"Studiodev/affiche.html", {"Studiodev": Studiodev})
 
 
 def indexstudiodev(request):
     liste = list(models.Studiodev.objects.all())
-    return render(request,"App_Django/index.html",{"liste" : liste})
+    return render(request,"Studiodev/index.html",{"liste" : liste})
 
 def updatestudiodev(request, id):
     Studiodev = models.Studiodev.objects.get(pk=id)
     form = StudiodevForm(Studiodev.dico())
-    return render(request, "App_Django/ajout.html",{"form" : form, "id" : id})
+    return render(request, "Studiodev/ajout.html",{"form" : form, "id" : id})
 
 def updatetraitementstudiodev(request, id):
     if request.method == "POST":
@@ -38,7 +38,7 @@ def updatetraitementstudiodev(request, id):
             Studiodev.save()
             return HttpResponseRedirect("/App_Django/")
         else:
-            return render(request, "App_Django/ajout.html", {"form": form, "id": id})
+            return render(request, "Studiodev/ajout.html", {"form": form, "id": id})
 
 def deletestudiodev(request, id):
      Studiodev = models.Studiodev.objects.get(pk=id)
