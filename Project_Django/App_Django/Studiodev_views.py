@@ -7,7 +7,7 @@ def traitementstudiodev(request):
         form = StudiodevForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect("/App_Django/")
+            return HttpResponseRedirect("/App_Django/indexstudiodev")
         else:
             return render(request,"Studiodev/ajout.html",{"form": form})
 
@@ -36,11 +36,11 @@ def updatetraitementstudiodev(request, id):
             Studiodev = form.save(commit = False)
             Studiodev.id = id
             Studiodev.save()
-            return HttpResponseRedirect("/App_Django/")
+            return HttpResponseRedirect("/App_Django/indexstudiodev")
         else:
             return render(request, "Studiodev/ajout.html", {"form": form, "id": id})
 
 def deletestudiodev(request, id):
      Studiodev = models.Studiodev.objects.get(pk=id)
      Studiodev.delete()
-     return HttpResponseRedirect("/App_Django/")
+     return HttpResponseRedirect("/App_Django/indexstudiodev")

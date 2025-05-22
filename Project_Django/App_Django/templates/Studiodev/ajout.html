@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1> Saisie d'un studio </h1>
-      {% if id != '' %}
+      {% if id %}
         <form method="post" action="/App_Django/updatetraitementstudiodev/{{id}}/">
        {% else %}
            <form method="post" action="/App_Django/traitementstudiodev/">
