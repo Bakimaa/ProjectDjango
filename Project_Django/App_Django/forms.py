@@ -7,12 +7,12 @@ class JeuxForm(ModelForm):
         model = models.Jeux
         fields = ('nom', 'plateforme', 'date_parution', 'prix','genre', 'resume')
         labels = {
-            'nom' : _('nom'),
-            'plateforme' : _('plateforme') ,
-            'date_parution' : _('date de parution'),
-            'prix' : _('prix'),
-            'genre' : _('genre'),
-            'resume' : _('resume')
+            'nom' : _('Nom'),
+            'plateforme' : _('Plateforme') ,
+            'date_parution' : _('Date de parution'),
+            'prix' : _('Prix'),
+            'genre' : _('Genre'),
+            'resume' : _('Résumé')
         }
 
 class StudiodevForm(ModelForm):

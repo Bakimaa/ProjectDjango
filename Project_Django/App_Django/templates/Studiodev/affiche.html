@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Affichage {{Studiodev.nom}}</title>
-</head>
-<body>
+{% extends 'Main/main.html' %}
+{% block title %}
+Index du site
+{% endblock %}
 
-</body>
-</html>
+{% block content %}
+    {{Studiodev}} créateur de {{Studiodev.franchise}}
+<a href="/App_Django/ajout/{{Studiodev.id}}/"> ajouter un jeu </a>
+
+<ol>
+    Liste des jeux créer par le studio
+    {% for l in liste %}
+        <li> {{l.nom}} </li>
+    {% endfor %}
+</ol>
+{% endblock %}

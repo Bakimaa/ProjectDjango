@@ -7,7 +7,7 @@ def traitementstudiodev(request):
         form = StudiodevForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect("/App_Django/indexstudiodev")
+            return HttpResponseRedirect("/App_Django/")
         else:
             return render(request,"Studiodev/ajout.html",{"form": form})
 
@@ -17,7 +17,8 @@ def ajoutstudiodev(request):
 
 def affichestudiodev(request, id):
     Studiodev = models.Studiodev.objects.get(pk=id)
-    return render(request,"Studiodev/affiche.html", {"Studiodev": Studiodev})
+    liste = models.Jeux.objects.filter(studiodev_id=id)
+    return render(request,"Studiodev/affiche.html", {"Studiodev": Studiodev, "liste": liste})
 
 
 def indexstudiodev(request):
@@ -36,11 +37,11 @@ def updatetraitementstudiodev(request, id):
             Studiodev = form.save(commit = False)
             Studiodev.id = id
             Studiodev.save()
-            return HttpResponseRedirect("/App_Django/indexstudiodev")
+            return HttpResponseRedirect("/App_Django/")
         else:
             return render(request, "Studiodev/ajout.html", {"form": form, "id": id})
 
 def deletestudiodev(request, id):
      Studiodev = models.Studiodev.objects.get(pk=id)
      Studiodev.delete()
-     return HttpResponseRedirect("/App_Django/indexstudiodev")
+     return HttpResponseRedirect("/App_Django/")

@@ -7,13 +7,13 @@ class Jeux(models.Model):
         prix = models.IntegerField(blank=False)
         genre = models.TextField(null = True, blank = True)
         resume = models.TextField(null= True, blank = True)
-
+        studiodev = models.ForeignKey("studiodev", on_delete=models.CASCADE, default=None)
         def __str__(self):
                 chaine = f"{self.nom} appartenant aux genres ({self.genre}) disponible sur {self.plateforme} édité le {self.date_parution}"
                 return chaine
 
         def dico(self):
-                return {"nom":self.nom, "pateforme":self.plateforme, "date_parution":self.date_parution, "prix":self.prix, "genre":self.genre, "resume":self.resume}
+                return {"nom":self.nom, "pateforme":self.plateforme, "date_parution":self.date_parution, "prix":self.prix, "genre":self.genre, "resume":self.resume, "studiodev":self.studiodev}
 
 class Studiodev(models.Model):
         nom = models.CharField(max_length=100, blank=False)
