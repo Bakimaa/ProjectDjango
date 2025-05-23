@@ -2,7 +2,8 @@
 {% block title %}
 Index du site
 {% endblock %}
-
+    {% load static %}
+<link rel="stylesheet" href="{% static 'App_Django/style.css' %}">
 {% block content %}
     {{Studiodev}} créateur de {{Studiodev.franchise}}
 <a href="/App_Django/ajout/{{Studiodev.id}}/"> ajouter un jeu </a>

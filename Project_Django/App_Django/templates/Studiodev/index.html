@@ -2,7 +2,8 @@
 {% block title %}
 Index du site
 {% endblock %}
-
+    {% load static %}
+<link rel="stylesheet" href="{% static 'App_Django/style.css' %}">
 {% block content %}
 <h1> Bienvenue sur la Base de donnée des studios de développement de jeux vidéos </h1>
 <a href="/App_Django/ajoutstudiodev/"> ajouter un studio </a>
